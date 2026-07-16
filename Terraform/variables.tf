@@ -4,10 +4,22 @@ variable "aws_region" {
   default     = "ap-south-1"
 }
 
+variable "project_name" {
+  description = "Project name prefix used for tagging and naming resources."
+  type        = string
+  default     = "java-devops-demo"
+}
+
 variable "cluster_name" {
   description = "The name of the EKS cluster."
   type        = string
   default     = "java-devops-demo-cluster"
+}
+
+variable "cluster_version" {
+  description = "The Kubernetes version for the EKS cluster."
+  type        = string
+  default     = "1.27"
 }
 
 variable "vpc_cidr" {
