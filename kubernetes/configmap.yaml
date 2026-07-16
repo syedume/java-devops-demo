@@ -1,0 +1,9 @@
+# Stores application configuration.
+
+apiVersion: v1
+kind: ConfigMap 
+metadata:
+  name: java-demo-configmap
+  namespace: java-devops-demo
+data:
+  Environment: "Prodcution"

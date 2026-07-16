@@ -1,0 +1,6 @@
+# Responsible for creating an isolated environment.
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: java-devops-demo

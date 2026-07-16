@@ -1,0 +1,34 @@
+# Responsible for running your application.
+
+# Contains:
+
+# Pod definition
+# Container image
+# Replicas
+# Environment variables
+# Resource limits
+# Health probes
+
+
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: java-demo-deployment
+  namespace: java-devops-demo 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-demo
+  template:
+    metadata:
+      labels:
+        app: java-demo
+  spec:
+    contianers:
+      - name: java-demo-container
+        image: syedumer98488/java-devops-demo:latest
+        
+
+        ports:
+          - containerPort: 8080

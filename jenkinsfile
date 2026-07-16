@@ -1,0 +1,34 @@
+pipeline {
+    agent any {
+
+        stages{
+            stage{
+                steps('git checkout'){
+                    git clone "https://github.com/your-repo/java-devops-demo.git"
+                }
+            }
+            stage{
+                steps('maven build'){
+                    sh 'mvn clean package -DskipTests'
+                }
+            }
+            stage{
+                steps('Docker build'){
+                    sh 'docker build -t java-demo:latest .'
+                }
+            }
+            stage{
+                steps('docker_login'){
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'syedumer98488 ', passwordVariable: 'PASSWORD')]) {
+                        sh 'docker login -u $USERNAME -p $PASSWORD'
+                    }
+                }
+            }
+            stage{
+                steps('docker push'){
+                    sh 'docker push syedumer98488/java-demo:latest'
+                }
+            }
+        }
+    }
+}
