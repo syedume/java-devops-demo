@@ -5,14 +5,14 @@ module "eks" {
   cluster_name    = var.cluster_name
   cluster_version = var.cluster_version
   vpc_id          = var.vpc_id
-  subnets         = var.subnets
+  subnet_ids      = var.subnets
 
-  node_groups = {
+  eks_managed_node_groups = {
     default = {
-      desired_capacity = 2
-      min_capacity     = 1
-      max_capacity     = 3
-      instance_types   = ["t3.medium"]
+      desired_size   = 2
+      min_size       = 1
+      max_size       = 3
+      instance_types = ["t3.medium"]
     }
   }
 
