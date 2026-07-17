@@ -3,7 +3,7 @@ kind: ClusterConfig
 metadata:
   name: java-devops-demo
   region: ap-south-1
-  version: "1.27"
+  version: "1.33"
 nodeGroups:
   - name: worker-nodes
     instanceType: t2.medium
@@ -15,10 +15,6 @@ nodeGroups:
 
     ssh:
       allow: false
-
-
-
-
-# eksctl create cluster -f eks-cluster.yaml 
+# eksctl create cluster -f eks-cluster.yaml
 #kubectl get nodes
 #kubectl cluster-info

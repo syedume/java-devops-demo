@@ -19,7 +19,7 @@ variable "cluster_name" {
 variable "cluster_version" {
   description = "The Kubernetes version for the EKS cluster."
   type        = string
-  default     = "1.27"
+  default     = "1.33"
 }
 
 variable "vpc_cidr" {
@@ -31,5 +31,5 @@ variable "vpc_cidr" {
 variable "availability_zones" {
   description = "List of availability zones for subnet placement."
   type        = list(string)
-  default     = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+  default     = ["ap-south-1a", "ap-south-1b"]
 }

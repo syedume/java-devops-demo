@@ -1,2 +1,2 @@
-aws_region   = "us-east-1"
+aws_region   = "ap-south-1"
 project_name = "java-devops-demo"
